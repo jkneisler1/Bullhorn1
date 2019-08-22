@@ -11,8 +11,8 @@
         <input type="hidden" th:field="*{id}" />
         Content :<textarea rows="3" th:field="*{content}" />
             <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span><br /><br />
-        Due Date :<input type="text" th:field="*{dueDate}" />
-            <span th:if="${#fields.hasErrors('dueDate')}" th:errors="*{dueDate}"></span><br /><br />
+        Due Date :<input type="text" th:field="*{posteddate}" />
+            <span th:if="${#fields.hasErrors('posteddate')}" th:errors="*{posteddate}"></span><br /><br />
         Sent By :<input type="text" th:field="*{sentby}" />
             <span th:if="${#fields.hasErrors('sentby')}" th:errors="*{sentby}"></span><br /><br />
         <input type="submit" value="Submit" />

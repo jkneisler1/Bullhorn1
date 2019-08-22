@@ -6,7 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Date;
 
 @Entity
 public class Message {
@@ -20,7 +19,7 @@ public class Message {
     private String content;
 
     @NotNull
-    private String dueDate;
+    private String posteddate;
 
     @NotNull
     @Size(min=4)
@@ -34,8 +33,8 @@ public class Message {
         return content;
     }
 
-    public String getDueDate() {
-        return dueDate;
+    public String getPosteddate() {
+        return posteddate;
     }
 
     public String getSentby() {
@@ -50,8 +49,8 @@ public class Message {
         this.content = content;
     }
 
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
+    public void setPosteddate(String dueDate) {
+        this.posteddate = posteddate;
     }
 
     public void setSentby(String sentby) {
