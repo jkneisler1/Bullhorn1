@@ -3,15 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Message Detail Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        h3 {
+            margin-left: 1.0in;
+        }
+        h4 {
+            margin-left: 1.0in;
+        }
+        p {
+            margin-left: 1.0in;
+        }
+    </style>
 </head>
 <body>
     <div th:replace="base :: header"></div>
+
     <br /><br />
-    <a href="/">Show All Message Entries</a><br /><br />
-    Content:<span th:text="${message.content}" ></span><br />
-    Due Date :<span th:text="${message.posteddate}" ></span><br />
-    Sent By :<span th:text="${message.sentby}" ></span><br /><br />
-    <a th:href="@{/delete/{id}(id=${message.id})}">Delete this todo entry?</a>
+
+    <p><a href="/">Show All Message Entries</a></p><br />
+    <p>Sent By :<span th:text="${message.sentby}" ></span></p>
+    <p>Content :<span th:text="${message.content}" ></span></p>
+    <p>Posted Date :<span th:text="${message.posteddate}" ></span></p><br />
+    <p><a th:href="@{/delete/{id}(id=${message.id})}">Delete this message entry?</a></p>
+
     <br /><br />
+
     <div th:replace="base :: footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>

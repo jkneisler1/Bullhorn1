@@ -6,6 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 public class Message {
@@ -49,8 +52,11 @@ public class Message {
         this.content = content;
     }
 
-    public void setPosteddate(String dueDate) {
-        this.posteddate = posteddate;
+    public void setPosteddate(String posteddate) {
+        Date date = new Date();
+        Timestamp ts = new Timestamp(date.getTime());
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        this.posteddate = formatter.format(ts).toString();
     }
 
     public void setSentby(String sentby) {
