@@ -14,6 +14,9 @@
         p {
             margin-left: 1.0in;
         }
+        img {
+            margin-left: 1.0in;
+        }
     </style>
 </head>
 <body>
@@ -25,6 +28,12 @@
         <h3>Message [[${message.id}]], Sent By: [[${message.sentby}]]</h3>
         <p>Content: [[${message.content}]]</p>
         <p>Posted:  [[${message.posteddate}]]</p>
+
+        <div th:if="${message.headshot} != null">
+            <img th:src="${message.headshot}" />
+            <br />
+        </div>
+
         <h4>Actions</h4>
         <p><a th:href="@{/update/{id}(id=${message.id})}">Update</a> - <a th:href="@{/detail/{id}(id=${message.id})}">Details</a> - <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a></p><br />
     </div>

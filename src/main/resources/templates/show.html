@@ -25,6 +25,10 @@
     <p>Sent By :<span th:text="${message.sentby}" ></span></p>
     <p>Content :<span th:text="${message.content}" ></span></p>
     <p>Posted Date :<span th:text="${message.posteddate}" ></span></p><br />
+    <p th:if="${message.headshot} != null">
+        <img th:src="${message.headshot}" /><br />
+        System.out.println(message.headshot);
+    </p>
     <p><a th:href="@{/delete/{id}(id=${message.id})}">Delete this message entry?</a></p>
 
     <br /><br />

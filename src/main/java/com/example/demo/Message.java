@@ -18,7 +18,7 @@ public class Message {
     private long id;
 
     @NotNull
-    @Size(min=4)
+    @Size(max=150)
     private String content;
 
     @NotNull
@@ -27,6 +27,8 @@ public class Message {
     @NotNull
     @Size(min=4)
     private String sentby;
+
+    private String headshot;
 
     public long getId() {
         return id;
@@ -61,6 +63,14 @@ public class Message {
 
     public void setSentby(String sentby) {
         this.sentby = sentby;
+    }
+
+    public String getHeadshot() {
+        return headshot;
+    }
+
+    public void setHeadshot(String headshot) {
+        this.headshot = headshot;
     }
 }
 

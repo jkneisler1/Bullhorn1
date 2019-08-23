@@ -21,13 +21,14 @@
 
     <br /><br />
 
-    <form action="#" th:action="@{/process}" th:object="${message}" method="post">
+    <form action="#" th:action="@{/process}" th:object="${message}" method="post" enctype="multipart/form-data">
         <input type="hidden" th:field="*{id}" />
         <input type="hidden" th:field="*{posteddate}" />
-        <p>Content :<textarea rows="3" th:field="*{content}" />
+        <p>Content : <textarea rows="3" cols="50" th:field="*{content}" />
             <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span></p><br />
-        <p>Sent By :<input type="text" th:field="*{sentby}" />
+        <p>Sent By : <input size="50" type="text" th:field="*{sentby}" />
             <span th:if="${#fields.hasErrors('sentby')}" th:errors="*{sentby}"></span></p><br />
+        <p><input type="file" name="file" /></p>
         <p><input type="submit" value="Submit" /></p>
     </form>
 
